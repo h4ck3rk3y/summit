@@ -3,7 +3,7 @@ participants:
 - el_client_type: geth
   el_client_image: ethereum/client-go:latest
   cl_client_type: lighthouse
-  cl_client_image: sigp/lighthouse
+  cl_client_image: sigp/lighthouse:latest
   beacon_extra_params:
   - "--always-prefer-builder-payload"
   - "--disable-peer-scoring"

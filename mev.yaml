@@ -1,17 +1,18 @@
+mev_type: full
 participants:
-  - el_client_type: nethermind
-    cl_client_type: prysm
-  - el_client_type: geth
-    cl_client_type: lighthouse
-  - el_client_type: reth
-    cl_client_type: teku
-ethereum_metrics_exporter_enabled: false
-netowrk_params:
-  num_validator_keys_per_node: 64
-additional_services:
-  - tx_spammer
-  - blob_spammer
-  - el_forkmon
-  - beacon_metrics_gazer
-  - dora
-  - prometheus_grafana
+- el_client_type: geth
+  el_client_image: ethereum/client-go:latest
+  cl_client_type: lighthouse
+  cl_client_image: sigp/lighthouse
+  beacon_extra_params:
+  - "--always-prefer-builder-payload"
+  - "--disable-peer-scoring"
+network_params:
+  capella_fork_epoch: 0
+  seconds_per_slot: 3
+mev_params:
+  mev_flood_seconds_per_bundle: 12
+  mev_flood_extra_args:
+  - "--txsPerBundle=300"
+  mev_flood_image: flashbots/mev-flood:0.0.9
+  mev_relay_image: flashbots/mev-boost-relay:0.27.0

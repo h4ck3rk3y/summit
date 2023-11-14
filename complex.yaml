@@ -6,7 +6,7 @@ participants:
   - el_client_type: reth
     cl_client_type: teku
 ethereum_metrics_exporter_enabled: false
-netowrk_params:
+network_params:
   num_validator_keys_per_node: 64
 additional_services:
   - tx_spammer

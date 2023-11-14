@@ -15,3 +15,4 @@ additional_services:
   - beacon_metrics_gazer
   - dora
   - prometheus_grafana
+# - full_beaconchain_explorer
